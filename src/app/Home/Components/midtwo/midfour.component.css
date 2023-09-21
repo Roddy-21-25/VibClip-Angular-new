@@ -1,0 +1,25 @@
+  
+  /* Media query para tabletas */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .midThree-img {
+      height: 50%;
+      max-width: 100%;
+    }
+  }
+
+  .a-btn:hover .button-header {
+    background: white;
+    color: rgb(0, 128, 255);
+    box-shadow: 0px 0px 6px white;
+  }
+  
+  .bi-arrow-right {
+    margin-bottom: 2px;
+    margin-left: 7px;
+    transition: all 0.3s ease;
+  }
+  
+  .a-btn:hover .bi-arrow-right {
+    margin-left: 17px;
+  }
+

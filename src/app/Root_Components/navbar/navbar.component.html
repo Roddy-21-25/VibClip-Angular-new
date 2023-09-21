@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul
+        class="nav nav-tabs mt-2 mb-4 justify-content-center"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [ngClass]="{ active: _isActiveHome }"
+            (click)="setActiveTab(true)"
+            aria-current="page"
+            routerLink="/"
+          >
+            Home</a
+          >
+        </li>
+        <li class="nav-item search-one">
+          <a
+            class="nav-link"
+            [ngClass]="{ active: _isActiveSearch }"
+            (click)="setActiveTab(false)"
+            routerLink="search"
+          >
+            Search Videos</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

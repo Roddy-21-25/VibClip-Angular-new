@@ -1,0 +1,31 @@
+.a-btn {
+    transition: all 0.3s ease;
+  }
+  
+  .button-header {
+    border: 2px solid white;
+    border-radius: 10px;
+    background: none;
+    color: white;
+    font-weight: 500;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+      .img-mid {
+        height: auto;
+        max-width: 100%;
+      }
+    }
+    
+    /* Media query para tabletas */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .img-mid {
+        height: 50%;
+        max-width: 100%;
+      }
+    }

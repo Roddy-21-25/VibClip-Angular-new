@@ -1,0 +1,317 @@
+<div class="container">
+  <div class="box">
+    <div class="d-flex justify-content-center">
+      <a routerLink="/" class="a-btn box-button-new">
+        <button class="button-header">Back To Home</button>
+      </a>
+    </div>
+    <h1 class="title-new">
+      VidClip <br />
+      Video Generator
+    </h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h2 class="text-search-new text-center">
+        Discover the Perfect Video Topic You've Been Searching For
+      </h2>
+      <div class="form-outline mb-4">
+        <input
+          type="text"
+          [(ngModel)]="topic"
+          id="form7Example1"
+          class="form-control"
+          placeholder="Write the Name of the Video..."
+        />
+        <div class="d-grid gap-2 mt-3">
+          <button
+            class="request-new-button"
+            type="submit"
+            (click)="EnviarRequest()"
+          >
+            Get Videos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="alert alert-light" role="alert">
+          <h4 class="alert-heading text-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-question-circle-fill mb-1 me-3"
+              viewBox="0 0 16 16"
+              style="color: #6592fd"
+            >
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+              />
+            </svg>
+            How to Downloads the videos
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-question-circle-fill mb-1 mx-3"
+              viewBox="0 0 16 16"
+              style="color: #6592fd"
+            >
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+              />
+            </svg>
+          </h4>
+          <h4 class="text-center">So you have Two Options:</h4>
+          <p>
+            1- On the Video,
+            <em
+              ><strong style="color: #374b79"
+                >there should be 3 point</strong
+              ></em
+            >. If you click there, you will see an option with the name:
+            <em><strong style="color: #374b79">“Download”</strong></em
+            >, if you click on that option. The video will save on you PC or
+            Mobile.
+          </p>
+          <hr />
+          <p class="mb-0">
+            2- Each video have a Button, If you click that Button, it will send
+            you to the
+            <em
+              ><strong style="color: #374b79"
+                >Original Page of the Video</strong
+              ></em
+            >. On that Page, there are more options for download that video.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="brCheck">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-search-new text-center">
+        Videos: where moments come to life
+      </h2>
+      <div class="col-sm-4 mt-3 d-flex justify-content-center">
+        <img class="img-mid-new" src="/assets/VideosAssets/c (2).jpeg" alt="" />
+      </div>
+      <div class="col-sm-4 mt-3 d-flex justify-content-center">
+        <img class="img-mid-new" src="/assets/VideosAssets/c (1).jpeg" alt="" />
+      </div>
+      <div class="col-sm-4 mt-3 d-flex justify-content-center">
+        <img class="img-mid-new" src="/assets/VideosAssets/c (3).jpeg" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <ng-container
+      *ngFor="
+        let video of box | paginate : { itemsPerPage: 4, currentPage: page }
+      "
+    >
+      <div class="col-sm-3">
+        <div class="video_box mt-3 mb-3">
+          <h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+              />
+            </svg>
+            <span class="UserText">User:</span>
+            <a [href]="video.user.url" target="_blank">
+              <span class="UserMeta">{{ video.user.name }}</span>
+            </a>
+          </h3>
+
+          <video class="video-card" [width]="320" height="240" controls>
+            <source
+              [src]="video.video_Data.link"
+              [type]="video.video_Data.file_type"
+            />
+          </video>
+
+          <div class="details-section text-center">
+            <p class="quality_fps_p">
+              <span class="Quality-text">Quality: </span
+              ><span>{{ video.video_Data.quality }}</span>
+              <span class="FPS-text">FPS: </span
+              ><span>{{ video.video_Data.fps }}</span>
+            </p>
+            <p>
+              <span class="Resolution-text">Resolution: </span
+              ><span
+                >{{ video.video_Data.resolution.width }}x{{
+                  video.video_Data.resolution.height
+                }}</span
+              >
+            </p>
+          </div>
+
+          <a [href]="video.pexels_Results.pexel_Video_url" target="_blank">
+            <div class="d-grid gap-2 mt-3 mb-2">
+              <button type="button" class="Pexel-button">
+                <span class="Pexel-text">Go to Pexel</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-caret-right-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="!brCheck" class="box-pagination mt-5 mb-3">
+      <pagination-controls
+        class="Button-pagination text-light"
+        (pageChange)="page = $event"
+        previousLabel="Previous"
+        nextLabel="Next"
+        [responsive]="true"
+      ></pagination-controls>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 d-flex m-3 justify-content-center">
+        <img
+          class="brands-header"
+          src="/assets/HomePageAssets/Brands/Amazon.png"
+          alt=""
+        />
+        <img
+          class="brands-header"
+          src="/assets/HomePageAssets/Brands/Marvel.png"
+          alt=""
+        />
+        <img
+          class="brands-header"
+          src="/assets/HomePageAssets/Brands/Netflix.png"
+          alt=""
+        />
+        <img
+          class="brands-header"
+          src="/assets/HomePageAssets/Brands/Sony.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="row">
+      <div class="col-sm-5">
+        <img
+          class="img-credit d-flex justify-content-center"
+          src="/assets/VideosAssets/credit.jpeg"
+          alt=""
+        />
+      </div>
+      <div class="col-sm-7">
+        <h2 class="credit-header">
+          Remember to Give Credit When You Download Videos
+        </h2>
+        <p class="credit-p">
+          Downloading and using videos is a common practice, but it's essential
+          to respect the original creators and their work. Whenever you use a
+          video in your projects or share it online, always give proper credit
+          to the creators. <br /><br />
+          This not only acknowledges their hard work but also encourages a
+          culture of respect and creativity in the online community.
+          <br /><br />
+          Giving credit is a simple yet meaningful way to support content
+          creators and foster a more collaborative digital environment.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form5Example27" class="form-control" />
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+  </div>
+  <!-- Grid container -->
+</footer>
+
+<app-footer></app-footer>
